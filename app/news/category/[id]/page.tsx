@@ -12,6 +12,8 @@ type Props = {
   };
 };
 
+export const revalidate = 1;
+
 export default async function Page({ params }: Props) {
   const category = await getCatetoryDetail(params.id).catch(notFound);
   const { contents: news, totalCount } = await getNewsList({
